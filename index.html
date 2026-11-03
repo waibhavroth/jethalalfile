@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7138d7">
+
+  <title>JethalalFile - Your World, Your Memories</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+  <a href="#" class="logo" onclick="showPage('home'); return false;">
+    JethalalFile ✨
+  </a>
+
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('photos')">📸 Photos</button>
+    <button onclick="showPage('videos')">🎬 Videos</button>
+  </nav>
+
+  <button class="admin-btn" onclick="adminLogin()">
+    Admin 🔐
+  </button>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home" class="page active">
+
+    <div class="hero">
+      <div class="hero-content">
+        <span class="tag">YOUR HAPPY PLACE ✨</span>
+
+        <h1>
+          Every picture<br>
+          tells a <span>story!</span>
+        </h1>
+
+        <p>Your world. Your memories. Your JethalalFile.</p>
+
+        <div class="hero-buttons">
+          <button class="photo-btn" onclick="showPage('photos')">
+            Explore Photos 📸
+          </button>
+
+          <button class="video-btn" onclick="showPage('videos')">
+            Watch Videos ▶
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="floating-card card-one">📸</div>
+        <div class="floating-card card-two">💖</div>
+        <div class="floating-card card-three">🎬</div>
+        <div class="big-emoji">🌈</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-heading">
+        <h2>Explore Photos 📸</h2>
+        <button class="see-all" onclick="showPage('photos')">See all →</button>
+      </div>
+
+      <div id="home-photos" class="gallery"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-heading">
+        <h2>Latest Videos 🎬</h2>
+        <button class="see-all" onclick="showPage('videos')">See all →</button>
+      </div>
+
+      <div id="home-videos" class="gallery"></div>
+    </div>
+
+  </section>
+
+  <!-- PHOTOS -->
+  <section id="photos" class="page">
+
+    <div class="page-heading pink-heading">
+      <span>📸 PHOTO COLLECTION</span>
+      <h1>Beautiful Moments</h1>
+      <p>Every photo has a story to tell.</p>
+    </div>
+
+    <div class="section">
+      <div id="photo-gallery" class="gallery"></div>
+    </div>
+
+  </section>
+
+  <!-- VIDEOS -->
+  <section id="videos" class="page">
+
+    <div class="page-heading orange-heading">
+      <span>🎬 VIDEO COLLECTION</span>
+      <h1>Watch & Enjoy</h1>
+      <p>Relive your favorite moments.</p>
+    </div>
+
+    <div class="section">
+      <div id="video-gallery" class="gallery"></div>
+    </div>
+
+  </section>
+
+  <!-- ADMIN -->
+  <section id="admin" class="page">
+
+    <div class="page-heading admin-heading">
+      <span>🔐 PRIVATE DASHBOARD</span>
+      <h1>JethalalFile Admin</h1>
+      <p>Manage your photos and videos.</p>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="upload-box" id="login-box">
+
+      <h2>Welcome Back! 💜</h2>
+      <p>Login to manage your gallery.</p>
+
+      <input
+        type="email"
+        id="admin-email"
+        placeholder="Admin email"
+        autocomplete="username"
+      >
+
+      <input
+        type="password"
+        id="admin-password"
+        placeholder="Admin password"
+        autocomplete="current-password"
+      >
+
+      <button id="login-button" onclick="loginAdmin()">
+        Login 🔐
+      </button>
+
+      <p id="login-status"></p>
+
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="upload-box" id="upload-dashboard" hidden>
+
+      <h2>Welcome Admin! 💜</h2>
+      <p>Upload your favourite memories.</p>
+
+      <label for="media-file" class="upload-label">
+        📁
+        <strong>Choose Photos or Videos</strong>
+        <small>Maximum 8 MB per file</small>
+      </label>
+
+      <input
+        type="file"
+        id="media-file"
+        accept="image/*,video/*"
+        multiple
+        hidden
+      >
+
+      <p id="selected-files">No files selected</p>
+
+      <input
+        type="text"
+        id="media-caption"
+        placeholder="Write a caption..."
+        maxlength="200"
+      >
+
+      <button class="publish-btn" onclick="uploadMedia()">
+        Publish Content 🚀
+      </button>
+
+      <button class="logout-btn" onclick="logoutAdmin()">
+        Logout
+      </button>
+
+      <p id="upload-status"></p>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <h2>JethalalFile ✨</h2>
+  <p>Your World. Your Memories. Your JethalalFile. ❤️</p>
+  <small>Made with love © 2026 JethalalFile</small>
+</footer>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

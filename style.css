@@ -1,0 +1,533 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #7138d7;
+  --pink: #ff65a3;
+  --orange: #ffad35;
+  --blue: #32b9dd;
+  --green: #5acb91;
+  --dark: #29213c;
+  --muted: #777;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fffafc;
+  color: var(--dark);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  transition: 0.25s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.navbar {
+  background: white;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  box-shadow: 0 3px 20px #00000008;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--purple);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--pink);
+}
+
+nav {
+  display: flex;
+  gap: 12px;
+}
+
+nav button {
+  background: transparent;
+  color: #555;
+  padding: 10px 13px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+nav button:hover {
+  background: #f0e9ff;
+  color: var(--purple);
+}
+
+.admin-btn {
+  background: var(--purple);
+  color: white;
+  border-radius: 25px;
+  padding: 11px 20px;
+  font-weight: 600;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.hero {
+  margin: 35px auto;
+  width: 86%;
+  min-height: 380px;
+  border-radius: 30px;
+  padding: 55px;
+  background: linear-gradient(120deg, #5725c7, #9349df, #ee63a4);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 550px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #ffffff25;
+  border-radius: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 5vw, 58px);
+  line-height: 1.2;
+  margin: 20px 0;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: #ffdf73;
+}
+
+.hero p {
+  color: #f3eaff;
+  margin-bottom: 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.photo-btn, .video-btn {
+  padding: 13px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.photo-btn {
+  background: var(--orange);
+  color: #392347;
+}
+
+.video-btn {
+  background: var(--pink);
+  color: white;
+}
+
+.hero-art {
+  position: relative;
+  width: 250px;
+  height: 240px;
+  display: grid;
+  place-items: center;
+}
+
+.big-emoji {
+  font-size: 125px;
+}
+
+.floating-card {
+  position: absolute;
+  background: white;
+  border-radius: 18px;
+  padding: 17px;
+  font-size: 27px;
+  box-shadow: 0 10px 30px #0002;
+}
+
+.card-one { top: 10px; left: 0; }
+.card-two { bottom: 5px; right: 0; }
+.card-three { top: 5px; right: 0; }
+
+.section {
+  padding: 45px 7%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.eyebrow {
+  color: var(--pink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  font-size: 27px;
+}
+
+.see-all {
+  background: #f0e9ff;
+  color: var(--purple);
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.media-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px #37204b10;
+  transition: 0.3s;
+}
+
+.media-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px #37204b18;
+}
+
+.media-card img,
+.media-card video {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  background: #eee;
+}
+
+.card-content {
+  padding: 17px;
+}
+
+.caption {
+  font-weight: 600;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.like-btn, .comment-btn {
+  background: #fff0f6;
+  color: #ed4c8b;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.comment-btn {
+  background: #f0e9ff;
+  color: var(--purple);
+}
+
+.comments {
+  border-top: 1px solid #eee;
+  margin-top: 14px;
+  padding-top: 12px;
+}
+
+.comment-list {
+  font-size: 13px;
+  color: #555;
+  max-height: 110px;
+  overflow-y: auto;
+}
+
+.comment-list p {
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+}
+
+.comment-input {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.comment-input input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 9px 12px;
+  outline-color: var(--purple);
+}
+
+.comment-input button {
+  background: var(--purple);
+  color: white;
+  border-radius: 20px;
+  padding: 8px 13px;
+}
+
+.page-heading {
+  padding: 65px 20px;
+  text-align: center;
+  color: white;
+}
+
+.page-heading span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.page-heading h1 {
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+.page-heading p {
+  opacity: 0.9;
+}
+
+.pink-heading {
+  background: linear-gradient(120deg, #f65b9d, #ff9cbd);
+}
+
+.orange-heading {
+  background: linear-gradient(120deg, #f28c25, #ffca58);
+}
+
+.admin-heading {
+  background: linear-gradient(120deg, #5725c7, #32b9dd);
+}
+
+.upload-box {
+  max-width: 600px;
+  margin: 40px auto 70px;
+  padding: 35px;
+  border-radius: 25px;
+  background: white;
+  box-shadow: 0 5px 30px #00000010;
+  text-align: center;
+}
+
+.upload-box h2 {
+  margin-bottom: 8px;
+}
+
+.upload-box > p {
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.upload-label {
+  border: 2px dashed #b99aef;
+  border-radius: 18px;
+  background: #f8f3ff;
+  display: flex;
+  flex-direction: column;
+  padding: 35px 15px;
+  cursor: pointer;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.upload-label span {
+  font-size: 40px;
+}
+
+.upload-label small {
+  color: #777;
+}
+
+.upload-box input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-family: inherit;
+  margin-bottom: 15px;
+}
+
+.publish-btn, .logout-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(90deg, #7138d7, #ed65a3);
+}
+
+.logout-btn {
+  background: #555;
+  margin-top: 10px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 45px 15px;
+  color: #888;
+  background: #fff;
+  border-radius: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 15px;
+  background: #29213c;
+  color: white;
+}
+
+footer h2 {
+  color: #ff82b5;
+  margin-bottom: 10px;
+}
+
+footer p {
+  margin-bottom: 12px;
+}
+
+footer small {
+  color: #c7bfd3;
+}
+
+@media (max-width: 750px) {
+  .navbar {
+    padding: 15px 4%;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 3px;
+  }
+
+  nav button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .admin-btn {
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
+  .hero {
+    width: 92%;
+    padding: 30px 22px;
+    min-height: 330px;
+  }
+
+  .hero-art {
+    display: none;
+  }
+
+  .section {
+    padding: 30px 5%;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .media-card img,
+  .media-card video {
+    height: 170px;
+  }
+
+  .section-heading h2 {
+    font-size: 20px;
+  }
+
+  .upload-box {
+    margin: 25px 5%;
+    padding: 25px 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .media-card img,
+  .media-card video {
+    height: 230px;
+  }
+}
+
+
+/* Supabase admin login fields */
+
+.upload-box input[type="email"],
+.upload-box input[type="password"] {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border: 1px solid #e5dced;
+  border-radius: 12px;
+  font-family: inherit;
+  outline-color: #7138d7;
+}
+
+.upload-box [hidden] {
+  display: none !important;
+}
+
+#login-status,
+#upload-status {
+  margin-top: 15px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
